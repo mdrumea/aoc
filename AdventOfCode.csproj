@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <None Remove="Year2022\Day01\input.txt" />
+    <None Remove="Year2022\Day02\input.txt" />
+    <None Remove="Year2022\Day02\sample.txt" />
     <None Remove="Year2022\ex-part1.txt" />
     <None Remove="Year2022\ex-part2.txt" />
   </ItemGroup>
@@ -18,6 +20,8 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Year2022\Day01\input.txt" />
+    <EmbeddedResource Include="Year2022\Day02\input.txt" />
+    <EmbeddedResource Include="Year2022\Day02\sample.txt" />
   </ItemGroup>
 
 </Project>
