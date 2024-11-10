@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
+using System.Reflection.Metadata;
 using AdventOfCode.Year2022.Day01;
 using AdventOfCode.Year2022.Day02;
 using AdventOfCode.Year2022.Day03;
@@ -8,19 +10,13 @@ namespace AdventOfCode
 {
 	internal static class DayFactory
 	{
-		private static readonly Dictionary<int, Func<IDayChallenge>> dayChallenges = new()
+		public static IDayChallenge? GetDayChallenge(int year, int day)
 		{
-			{ 1, () => new Day01() },
-			{ 2, () => new Day02() },
-			{ 3, () => new Day03() },
-			// Add more days here as needed
-		};
-
-		public static IDayChallenge? GetDayChallenge(int day)
-		{
-			if (dayChallenges.TryGetValue(day, out var createDayChallenge))
+			var className = $"Day{day:D2}";
+			var type = Assembly.GetExecutingAssembly().GetType($"AdventOfCode.Year{year}.{className}.Challenge");
+			if (type != null && Activator.CreateInstance(type) is IDayChallenge instance)
 			{
-				return createDayChallenge();
+				return instance;
 			}
 			return null;
 		}
