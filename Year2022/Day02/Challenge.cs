@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode.Year2022.Day02
 {
-	internal class Day02 : BaseDayChallenge, IDayChallenge
+	internal class Challenge : BaseDayChallenge, IDayChallenge
 	{
 		public void Part1(Source source)
 		{

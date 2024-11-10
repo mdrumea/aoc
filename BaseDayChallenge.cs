@@ -30,11 +30,11 @@ namespace AdventOfCode
 
 		private string[] LoadEmbeddedFile(Source source)
 		{
-			var namespaceName = this.GetType().Namespace ?? string.Empty;
-			var className = this.GetType().Name;
+			var fullNamespaceName = this.GetType().Namespace ?? string.Empty;
+			var lastNamespaceName = fullNamespaceName.Split(".").Last();
 
-			var year = YearRegex().Match(namespaceName).Value;
-			var day = DayRegex().Match(className).Value;
+			var year = YearRegex().Match(fullNamespaceName).Value;
+			var day = DayRegex().Match(lastNamespaceName).Value;
 
 			var samplePath = $"AdventOfCode.Year{year}.Day{day}";
 
@@ -55,6 +55,11 @@ namespace AdventOfCode
 			
 			using var reader = new System.IO.StreamReader(stream);
 			var sampleData = reader.ReadToEnd();
+
+			if (sampleData.Length == 0)
+			{
+				throw new FileLoadException("Input file appears to be empty!");
+			}
 
 			return sampleData.Split(Environment.NewLine);
 		}
