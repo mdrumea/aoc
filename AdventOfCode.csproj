@@ -11,6 +11,8 @@
     <None Remove="Year2022\Day01\input.txt" />
     <None Remove="Year2022\Day02\input.txt" />
     <None Remove="Year2022\Day02\sample.txt" />
+    <None Remove="Year2022\Day07\input.txt" />
+    <None Remove="Year2022\Day07\sample.txt" />
     <None Remove="Year2022\Day06\input.txt" />
     <None Remove="Year2022\Day06\sample.txt" />
     <None Remove="Year2022\Day05\input.txt" />
@@ -30,6 +32,8 @@
     <EmbeddedResource Include="Year2022\Day01\input.txt" />
     <EmbeddedResource Include="Year2022\Day02\input.txt" />
     <EmbeddedResource Include="Year2022\Day02\sample.txt" />
+    <EmbeddedResource Include="Year2022\Day07\input.txt" />
+    <EmbeddedResource Include="Year2022\Day07\sample.txt" />
     <EmbeddedResource Include="Year2022\Day06\input.txt" />
     <EmbeddedResource Include="Year2022\Day06\sample.txt" />
     <EmbeddedResource Include="Year2022\Day05\input.txt" />
