@@ -11,6 +11,8 @@
     <None Remove="Year2022\Day01\input.txt" />
     <None Remove="Year2022\Day02\input.txt" />
     <None Remove="Year2022\Day02\sample.txt" />
+    <None Remove="Year2022\Day08\input.txt" />
+    <None Remove="Year2022\Day08\sample.txt" />
     <None Remove="Year2022\Day07\input.txt" />
     <None Remove="Year2022\Day07\sample.txt" />
     <None Remove="Year2022\Day06\input.txt" />
@@ -32,6 +34,8 @@
     <EmbeddedResource Include="Year2022\Day01\input.txt" />
     <EmbeddedResource Include="Year2022\Day02\input.txt" />
     <EmbeddedResource Include="Year2022\Day02\sample.txt" />
+    <EmbeddedResource Include="Year2022\Day08\input.txt" />
+    <EmbeddedResource Include="Year2022\Day08\sample.txt" />
     <EmbeddedResource Include="Year2022\Day07\input.txt" />
     <EmbeddedResource Include="Year2022\Day07\sample.txt" />
     <EmbeddedResource Include="Year2022\Day06\input.txt" />
@@ -42,6 +46,10 @@
     <EmbeddedResource Include="Year2022\Day04\sample.txt" />
     <EmbeddedResource Include="Year2022\Day03\input.txt" />
     <EmbeddedResource Include="Year2022\Day03\sample.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.3.2" />
   </ItemGroup>
 
 </Project>
