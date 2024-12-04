@@ -19,32 +19,31 @@ namespace AdventOfCode.Year2024.Day04
 		public void Part1(Source source)
 		{
 			var lines = LoadSource(source);
-			var wholeText = string.Join("", lines);
 
 			var count = 0;
 
 			string[,] grid = new string[lines.Length, lines[0].Length];
 
-			for (int i = 0; i < lines.Length; i++)
+			for (int i = 0; i < grid.RowCount(); i++)
 			{
-				for (int j = 0; j < lines[0].Length; j++)
+				for (int j = 0; j < grid.ColumnCount(); j++)
 				{
 					grid[i, j] = lines[i][j].ToString();
 				}
 			}
 
-			for(int i = 0; i < lines[0].Length; i++)
+			for(int i = 0; i < grid.RowCount(); i++)
 			{
-				for (int j = 0; j < lines[0].Length; j++)
+				for (int j = 0; j < grid.ColumnCount(); j++)
 				{
-					if (j + 3 <= lines[0].Length - 1 && grid[i, j] + grid[i, j + 1] + grid[i, j + 2] + grid[i, j + 3] == "XMAS") count++;
+					if (j + 3 <= grid.ColumnCount() - 1 && grid[i, j] + grid[i, j + 1] + grid[i, j + 2] + grid[i, j + 3] == "XMAS") count++;
 					if (j - 3 >= 0 && grid[i, j] + grid[i, j - 1] + grid[i, j - 2] + grid[i, j - 3] == "XMAS") count++;
-					if (i + 3 <= lines.Length - 1 && grid[i, j] + grid[i+1, j] + grid[i+2, j] + grid[i+3, j] == "XMAS") count++;
+					if (i + 3 <= grid.RowCount() - 1 && grid[i, j] + grid[i+1, j] + grid[i+2, j] + grid[i+3, j] == "XMAS") count++;
 					if (i - 3 >= 0 && grid[i, j] + grid[i-1, j] + grid[i-2, j] + grid[i-3, j] == "XMAS") count++;
-					if (j + 3 <= lines[0].Length - 1 && i - 3 >= 0 && grid[i, j] + grid[i - 1, j+1] + grid[i - 2, j+2] + grid[i - 3, j+3] == "XMAS") count++;
-					if (j + 3 <= lines[0].Length - 1 && i + 3 <= lines.Length - 1 && grid[i, j] + grid[i + 1, j + 1] + grid[i + 2, j + 2] + grid[i + 3, j + 3] == "XMAS") count++;
+					if (j + 3 <= grid.ColumnCount() - 1 && i - 3 >= 0 && grid[i, j] + grid[i - 1, j+1] + grid[i - 2, j+2] + grid[i - 3, j+3] == "XMAS") count++;
+					if (j + 3 <= grid.ColumnCount() - 1 && i + 3 <= grid.RowCount() - 1 && grid[i, j] + grid[i + 1, j + 1] + grid[i + 2, j + 2] + grid[i + 3, j + 3] == "XMAS") count++;
 					if (j - 3 >= 0 && i - 3 >= 0 && grid[i, j] + grid[i - 1, j - 1] + grid[i - 2, j - 2] + grid[i - 3, j - 3] == "XMAS") count++;
-					if (j - 3 >= 0 && i + 3 <= lines.Length - 1 && grid[i, j] + grid[i + 1, j - 1] + grid[i + 2, j - 2] + grid[i + 3, j - 3] == "XMAS") count++;
+					if (j - 3 >= 0 && i + 3 <= grid.RowCount() - 1 && grid[i, j] + grid[i + 1, j - 1] + grid[i + 2, j - 2] + grid[i + 3, j - 3] == "XMAS") count++;
 				}
 			}
 
@@ -55,25 +54,24 @@ namespace AdventOfCode.Year2024.Day04
 		public void Part2(Source source)
 		{
 			var lines = LoadSource(source);
-			var wholeText = string.Join("", lines);
 
 			var count = 0;
 
 			string[,] grid = new string[lines.Length, lines[0].Length];
 
-			for (int i = 0; i < lines.Length; i++)
+			for (int i = 0; i < grid.RowCount(); i++)
 			{
-				for (int j = 0; j < lines[0].Length; j++)
+				for (int j = 0; j < grid.ColumnCount(); j++)
 				{
 					grid[i, j] = lines[i][j].ToString();
 				}
 			}
 
-			for (int i = 0; i < lines.Length; i++)
+			for (int i = 0; i < grid.RowCount(); i++)
 			{
-				for (int j = 0; j < lines[0].Length; j++)
+				for (int j = 0; j < grid.ColumnCount(); j++)
 				{
-					if (j - 1 >= 0 && j + 1 <= lines[0].Length - 1 && i - 1 >= 0 && i + 1 <= lines.Length - 1 &&
+					if (j - 1 >= 0 && j + 1 <= grid.ColumnCount() - 1 && i - 1 >= 0 && i + 1 <= grid.RowCount() - 1 &&
 						(new HashSet<string>() { "MAS", "SAM" }).Contains(grid[i - 1, j - 1] + grid[i, j] + grid[i + 1, j + 1]) &&
 						(new HashSet<string>() { "MAS", "SAM" }).Contains(grid[i - 1, j + 1] + grid[i, j] + grid[i + 1, j - 1]))
 						count++;
