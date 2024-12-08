@@ -58,7 +58,7 @@ namespace AdventOfCode
 
 			if (sampleData.Length == 0)
 			{
-				throw new FileLoadException("Input file appears to be empty!");
+				Console.WriteLine($"File {string.Join(".", resourceName.Split(".")[^2..])} appears to be empty!");
 			}
 
 			return sampleData.Split(Environment.NewLine);
