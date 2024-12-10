@@ -84,6 +84,8 @@
     <EmbeddedResource Include="Year2024\Day02\sample.txt" />
     <EmbeddedResource Include="Year2024\Day01\input.txt" />
     <EmbeddedResource Include="Year2024\Day01\sample.txt" />
+    <EmbeddedResource Include="Year2024\Day10\input.txt" />
+    <EmbeddedResource Include="Year2024\Day10\sample.txt" />
   </ItemGroup>
 
   <ItemGroup>
